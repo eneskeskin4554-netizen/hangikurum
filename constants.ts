@@ -42,7 +42,7 @@ export const BROKERS: Broker[] = [
     features: ['Kredili İşlemde 0 Komisyon', 'Hızlı Emir İletimi', 'Modern Arayüz', 'Sigorta Güvencesi', 'Global Erişim'],
     description: 'Komisyonsuz kredi kampanyaları ve düşük işlem komisyonları ile öne çıkar. Hacim şartı aramadan rekabetçi oranlar sunar.',
     volumeRequirement: 'Kampanyaya göre',
-    accountOpenUrl: 'https://www.trive.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.trive.com.tr/',
     tags: ['Kredili İşlem', 'Rekabetçi']
   },
   {
@@ -59,7 +59,7 @@ export const BROKERS: Broker[] = [
     features: ['Çok Düşük Maliyet', 'FX ve Türev Piyasalar', 'Yüksek Kaldıraç İmkanı', 'Geniş Araştırma Arşivi', 'Bağımsız Kurum Esnekliği'],
     description: 'Aktif traderlar için piyasadaki en düşük komisyon oranlarından birini sunar. VİOP ve FX tarafında güçlüdür.',
     volumeRequirement: 'Yok',
-    accountOpenUrl: 'https://www.tacirler.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.tacirler.com.tr/',
     tags: ['Trader Dostu', 'Düşük Maliyet']
   },
   {
@@ -91,7 +91,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 3.7,
     features: ['Hızlı Platform Altyapısı', 'Halka Arz Odaklı', 'Anlık Piyasa Analizleri', 'Yüksek İşlem Hacmi', 'Bireysel Portföy Yönetimi'],
     description: 'Halka arzlardaki etkinliğiyle bilinir. Yüksek hacimli işlemlerde oranlar daha da aşağı çekilebilir.',
-    accountOpenUrl: 'https://a1capital.com.tr/hesap-ac/',
+    accountOpenUrl: 'https://a1capital.com.tr/',
     tags: ['Halka Arz', 'Hızlı İşlem']
   },
   {
@@ -107,7 +107,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 4.0,
     features: ['Hızlı Hesap Açılışı', 'VİOP Uzmanlığı', 'Günlük Bültenler', 'Algo-Trading API', 'YouTube Analizleri'],
     description: 'VİOP tarafında uzmanlaşmış kurumlardan biridir. Algo trading ve API desteği güçlüdür.',
-    accountOpenUrl: 'https://infoyatirim.com/hesap-ac/',
+    accountOpenUrl: 'https://infoyatirim.com/',
     tags: ['VİOP', 'Analiz']
   },
   {
@@ -123,7 +123,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 3.9,
     features: ['Gelişmiş Mobil Uygulama', 'Halka Arz Katılımı', 'FX Piyasaları', 'Dinamik Komisyon', 'Yatırım Danışmanlığı'],
     description: 'Teknoloji odaklı yatırımları ile bilinir. VİOP ve FX piyasalarında geniş ürün yelpazesi sunar.',
-    accountOpenUrl: 'https://www.alnusyatirim.com/hesap-ac',
+    accountOpenUrl: 'https://www.alnusyatirim.com/',
     tags: ['Teknolojik', 'Halka Arz']
   },
   {
@@ -156,7 +156,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 4.1,
     features: ['Güçlü Analiz Kadrosu', 'Forex Kökenli', 'Eğitim Desteği', 'Birebir İletişim', 'Hızlı Para Transferi'],
     description: 'Analiz departmanı sektörde oldukça saygındır. Forex kökenli olduğu için türev piyasalara (VİOP) hakimdir.',
-    accountOpenUrl: 'https://integralyatirim.com.tr/gercek-hesap',
+    accountOpenUrl: 'https://integralyatirim.com.tr/',
     tags: ['Analiz Lideri', 'Forex']
   },
   {
@@ -172,7 +172,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 4.1,
     features: ['Gedik Trader', 'Geniş Şube Ağı', 'Yatırım Kulübü', 'Ücretsiz Analiz', 'Private Banking'],
     description: 'Sektörün köklü kurumlarından. VİOP işlemlerinde Gedik Trader platformu üzerinden hızlı işlem imkanı sağlar.',
-    accountOpenUrl: 'https://www.gedik.com/hesap-ac',
+    accountOpenUrl: 'https://www.gedik.com/',
     tags: ['Köklü', 'Yaygın Ağ']
   },
   {
@@ -188,7 +188,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 3.9,
     features: ['Global Erişim', 'Profesyonel Platformlar', 'Uluslararası Fonlar', 'Vadeli İşlemler', 'Singapur Güvencesi'],
     description: 'Türev araçlarda (VİOP) global deneyimi ile öne çıkar. Yabancı yatırımcıların da tercih ettiği bir kurumdur.',
-    accountOpenUrl: 'https://www.phillipcapital.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.phillipcapital.com.tr/',
     tags: ['Uluslararası', 'Türev']
   },
   {
@@ -204,7 +204,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 3.6,
     features: ['Hacme Özel Oranlar', 'Müşteri Odaklı', 'Köklü Geçmiş', 'VİOP Teminat', 'Ücretsiz Eğitim'],
     description: 'Info Yatırım iştirakidir. VİOP işlemlerinde esnek teminat ve komisyon yapıları sunabilir.',
-    accountOpenUrl: 'https://marbasmenkul.com.tr/hesap-ac',
+    accountOpenUrl: 'https://marbasmenkul.com.tr/',
     tags: ['Butik', 'Esnek']
   },
   {
@@ -220,7 +220,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 4.3,
     features: ['İlk Aracı Kurum', 'Derinlikli Raporlar', 'Güçlü Sermaye', 'Kurumsal Hizmet', 'Geniş Portföy'],
     description: 'Türkiye\'nin ilk aracı kurumudur. Kurumsal ve nitelikli bireysel yatırımcılara hitap eder.',
-    accountOpenUrl: 'https://www.yf.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.yf.com.tr/',
     tags: ['İlk Kurum', 'Prestijli']
   },
   {
@@ -236,7 +236,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 4.2,
     features: ['Kişiye Özel Danışman', 'QNB Mobil Entegre', 'Zengin Fon Çeşitliliği', 'Varlık Yönetimi', 'Piyasa Yorumları'],
     description: 'QNB Finansbank iştirakidir. Dijital kanallardan yapılan işlemlerde standart oranlar uygulanır.',
-    accountOpenUrl: 'https://www.qnbfi.com/hesap-ac',
+    accountOpenUrl: 'https://www.qnbfi.com/',
     tags: ['Banka İştiraki', 'Varlık Yönetimi']
   },
   {
@@ -252,7 +252,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 4.4,
     features: ['Algolab ile Algoritmik İşlem', 'DenizTrader', 'Yapay Zeka Önerileri', 'Kredili İşlem', 'Hızlı Hesap'],
     description: 'Algolab uygulaması ile VİOP ve hisse tarafında algoritmik emirler oluşturulabilir. Standart oranlar banka ortalamasındadır.',
-    accountOpenUrl: 'https://www.denizyatirim.com/hesap-ac',
+    accountOpenUrl: 'https://www.denizyatirim.com/',
     tags: ['Algoritmik', 'Yapay Zeka']
   },
   {
@@ -268,7 +268,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 4.0,
     features: ['OYAK Güvencesi', 'Pratik İşlem', 'Kurumsal Finansman', 'Geniş Fon Ailesi', 'Emtia İşlemleri'],
     description: 'OYAK Grubu iştirakidir. Güvenilirlik ön plandadır, VİOP işlemleri için sağlam bir altyapı sunar.',
-    accountOpenUrl: 'https://www.oyakyatirim.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.oyakyatirim.com.tr/',
     tags: ['OYAK Grubu', 'Güvenli']
   },
   {
@@ -284,7 +284,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 3.8,
     features: ['TradeAll Platformu', 'Tek Ekran Global/Yerel', 'Türev Araçlar', 'Algo İşlemler', 'Sektör Raporları'],
     description: 'TradeAll platformu ile VİOP, Forex ve Hisse işlemlerini tek ekrandan yönetme imkanı verir.',
-    accountOpenUrl: 'https://www.akyatirim.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.akyatirim.com.tr/',
     tags: ['Profesyonel', 'TradeAll']
   },
   {
@@ -300,7 +300,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 4.1,
     features: ['BNP Paribas Ortağı', 'Pratik Borsa', 'Global Raporlar', 'Araştırma Desteği', 'Kurumsal Hizmet'],
     description: 'BNP Paribas ortaklığı ile güçlü bir türev (VİOP) işlem masasına sahiptir.',
-    accountOpenUrl: 'https://www.tebyatirim.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.tebyatirim.com.tr/',
     tags: ['Global Ortak', 'Kurumsal']
   },
   {
@@ -316,7 +316,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 4.6,
     features: ['e-Trader Mobil', 'Banka Entegrasyonu', 'Görüntülü Görüşme', 'Model Portföy', 'Yabancı Hisse'],
     description: 'Garanti BBVA Mobil üzerinden işlem kolaylığı sunar. Standart komisyon oranları uygulanır.',
-    accountOpenUrl: 'https://www.garantibbvayatirim.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.garantibbvayatirim.com.tr/',
     tags: ['Güvenilir', 'Entegre']
   },
   {
@@ -332,7 +332,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 4.4,
     features: ['Yatırım Dünyam', 'TradeBox', 'Model Portföy', 'Halka Arz Lideri', 'Sürdürülebilir Fonlar'],
     description: 'Yatırım Dünyam uygulaması ile hisse ve VİOP işlemleri entegre şekilde yapılabilir.',
-    accountOpenUrl: 'https://www.ykyatirim.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.ykyatirim.com.tr/',
     tags: ['Kullanıcı Dostu', 'Banka']
   },
   {
@@ -349,7 +349,7 @@ export const BROKERS: Broker[] = [
     features: ['TradeMaster', 'Kapsamlı Araştırma', 'Uluslararası Piyasa', 'Hızlı Emir', 'Güçlü Sermaye'],
     description: 'TradeMaster platformu VİOP oyuncuları için gelişmiş özellikler sunar. Komisyon oranları hacme göre değişebilir.',
     volumeRequirement: '10.000 TL alt limit',
-    accountOpenUrl: 'https://www.isyatirim.com.tr/tr-tr/hesap-ac/Sayfalar/default.aspx',
+    accountOpenUrl: 'https://www.isyatirim.com.tr/',
     tags: ['Piyasa Lideri', 'TradeMaster']
   },
   {
@@ -365,7 +365,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 3.7,
     features: ['HalkTrader', 'Kamu Bankası', 'Halka Arz Kolaylığı', 'Yaygın Şube', 'Temettü Yatırımı'],
     description: 'Kamu bankası iştiraki olarak güvenli VİOP işlemleri sunar. Oranlar özel bankalara göre daha düşüktür.',
-    accountOpenUrl: 'https://www.halkyatirim.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.halkyatirim.com.tr/',
     tags: ['Kamu', 'Güvenli']
   },
   {
@@ -381,7 +381,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 3.6,
     features: ['ZBorsa Mobil', 'Kamu Bankası Güvencesi', 'Halka Arz Erişimi', 'Yaygın Ağ', 'Uzun Vadeli Odak'],
     description: 'ZBorsa üzerinden hisse ve VİOP işlemleri yapılabilir. Kamu bankası avantajı ile standart oranlar daha uygundur.',
-    accountOpenUrl: 'https://www.ziraatyatirim.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.ziraatyatirim.com.tr/',
     tags: ['Kamu', 'Halka Arz']
   },
   {
@@ -397,7 +397,7 @@ export const BROKERS: Broker[] = [
     mobileAppScore: 3.8,
     features: ['TradeOnline', 'Halka Arz Liderliği', 'Kamu Güvencesi', 'VIOP Teminat', 'Portföy Yönetimi'],
     description: 'Vakıfbank iştirakidir. VİOP teminat tamamlama ve işlem süreçleri entegredir.',
-    accountOpenUrl: 'https://www.vakifyatirim.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.vakifyatirim.com.tr/',
     tags: ['Kamu', 'Güvenli']
   }
 ];
@@ -430,7 +430,7 @@ export const INTERNATIONAL_BROKERS: InternationalBroker[] = [
     mobileAppScore: 4.3,
     features: ['Düşük Komisyon', 'Avrupa Borsaları', 'Kullanıcı Dostu', 'Hızlı Hesap'],
     description: 'ABD hisse senedi işlemlerinde 1 USD minimum komisyon uygular. Avrupa borsalarına da rekabetçi oranlarla erişim sağlar.',
-    accountOpenUrl: 'https://www.trive.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.trive.com.tr/',
     tags: ['Avrupa Borsaları', 'Ekonomik']
   },
   {
@@ -445,7 +445,7 @@ export const INTERNATIONAL_BROKERS: InternationalBroker[] = [
     mobileAppScore: 3.9,
     features: ['Asya & ABD Erişimi', 'Profesyonel Platform', 'Geniş Ürün Gamı', 'Singapur Merkezli'],
     description: 'Sadece ABD değil, Singapur, Japonya, Hong Kong gibi Asya borsalarına da erişim sağlar. Min. komisyon borsaya göre 8-15 USD arası değişir.',
-    accountOpenUrl: 'https://www.phillipcapital.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.phillipcapital.com.tr/',
     tags: ['Asya Borsaları', 'Geniş Erişim']
   },
   {
@@ -460,7 +460,7 @@ export const INTERNATIONAL_BROKERS: InternationalBroker[] = [
     mobileAppScore: 4.1,
     features: ['Saxo Bank Altyapısı', 'Geniş Piyasa', 'Eğitim Desteği', 'Profesyonel Analiz'],
     description: 'Yurtdışı işlemlerinde işlem hacmine göre değişen oranlar sunar. Standart olarak min. komisyon borsaya göre 10 ile 25 birim para arasında değişir.',
-    accountOpenUrl: 'https://www.gedik.com/hesap-ac',
+    accountOpenUrl: 'https://www.gedik.com/',
     tags: ['Saxo Altyapı', 'Profesyonel']
   },
   {
@@ -475,7 +475,7 @@ export const INTERNATIONAL_BROKERS: InternationalBroker[] = [
     mobileAppScore: 3.8,
     features: ['TradeAll TR', 'FX ve CFD', 'Hızlı Emir', 'Kaldıraçlı İşlemler'],
     description: 'TradeAll platformu üzerinden ABD borsalarında minimum 15 USD işlem ücreti uygulanır. Profesyonel traderlar için CFD seçenekleri geniştir.',
-    accountOpenUrl: 'https://www.akyatirim.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.akyatirim.com.tr/',
     tags: ['CFD', 'Kaldıraç']
   },
   {
@@ -490,7 +490,7 @@ export const INTERNATIONAL_BROKERS: InternationalBroker[] = [
     mobileAppScore: 4.5,
     features: ['Güçlü Araştırma', 'Eurobond', 'Geniş Borsa Ağı', 'TradeMaster Intl'],
     description: 'TradeMaster International ile işlem yapılır. Standart komisyon binde 2.5, minimum işlem ücreti ise 25 USD/EUR seviyesindedir.',
-    accountOpenUrl: 'https://www.isyatirim.com.tr/tr-tr/hesap-ac/Sayfalar/default.aspx',
+    accountOpenUrl: 'https://www.isyatirim.com.tr/',
     tags: ['Eurobond', 'Kurumsal']
   },
   {
@@ -505,7 +505,7 @@ export const INTERNATIONAL_BROKERS: InternationalBroker[] = [
     mobileAppScore: 4.3,
     features: ['Geniş Ülke Erişimi', 'Derinlikli Raporlar', 'Kurumsal Güvence', 'ETF İşlemleri'],
     description: 'Global piyasalarda geniş bir erişim ağı sunar. İşlem hacmine göre komisyon oranlarında esneklik sağlanabilir.',
-    accountOpenUrl: 'https://www.yf.com.tr/hesap-ac',
+    accountOpenUrl: 'https://www.yf.com.tr/',
     tags: ['Global', 'Prestijli']
   }
 ];
@@ -536,7 +536,7 @@ export const CRYPTO_EXCHANGES: CryptoExchange[] = [
     mobileAppScore: 4.4,
     features: ['Yerli ve Köklü', 'Düşük Komisyon', 'Profesyonel Arayüz', 'Hızlı Destek', 'Soğuk Cüzdan'],
     description: 'Türkiye\'nin ilk Bitcoin borsası. Profesyonel traderlar için düşük komisyon ve gelişmiş grafikler sunar.',
-    accountOpenUrl: 'https://pro.btcturk.com/uye-ol',
+    accountOpenUrl: 'https://pro.btcturk.com/',
     tags: ['Yerli', 'Düşük Komisyon']
   },
   {
