@@ -16,16 +16,16 @@ const getClient = () => {
     node: !!nodeEnv,
   });
 
-  const apikey = geminiEnv || viteEnv || nodeEnv;
+  const apiKey = geminiEnv || viteEnv || nodeEnv;
   
-  if (!apikey) {
+  if (!apiKey) {
     console.warn(
       "Gemini API Key bulunamadı. Yapay zeka özellikleri devre dışı kalabilir."
     );
     return null; // Return null instead of throwing to prevent app crash
   }
 
-  return new GoogleGenAI({ apikey });
+  return new GoogleGenAI({ apiKey });
 };
 
 const formatContext = (brokers: Broker[], intBrokers: InternationalBroker[], cryptoExchanges: CryptoExchange[]): string => {
