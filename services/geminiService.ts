@@ -5,16 +5,19 @@ import { INTERNATIONAL_BROKERS, CRYPTO_EXCHANGES, LAST_UPDATED } from "../consta
 let chatSession: Chat | null = null;
 
 const getClient = () => {
-+  const apikey =
-+    import.meta.env.VITE_GEMINI_API_KEY ||
-+    import.meta.env.VITE_API_KEY ||
-+    process.env.API_KEY;
+  const apikey =
+    import.meta.env.VITE_GEMINI_API_KEY ||
+    import.meta.env.VITE_API_KEY ||
+    process.env.API_KEY;
 
-  if (!apiKey) {
-    console.warn("Gemini API Key bulunamadı. Yapay zeka özellikleri devre dışı kalabilir.");
+  if (!apikey) {
+    console.warn(
+      "Gemini API Key bulunamadı. Yapay zeka özellikleri devre dışı kalabilir."
+    );
     return null; // Return null instead of throwing to prevent app crash
   }
-  return new GoogleGenAI({ apiKey });
+
+  return new GoogleGenAI({ apikey });
 };
 
 const formatContext = (brokers: Broker[], intBrokers: InternationalBroker[], cryptoExchanges: CryptoExchange[]): string => {
