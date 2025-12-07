@@ -5,11 +5,19 @@ import { INTERNATIONAL_BROKERS, CRYPTO_EXCHANGES, LAST_UPDATED } from "../consta
 let chatSession: Chat | null = null;
 
 const getClient = () => {
-  const apikey =
-    import.meta.env.VITE_GEMINI_API_KEY ||
-    import.meta.env.VITE_API_KEY ||
-    process.env.API_KEY;
+  const geminiEnv = import.meta.env.VITE_GEMINI_API_KEY;
+  const viteEnv = import.meta.env.VITE_API_KEY;
+  const nodeEnv = process.env.API_KEY;
 
+  // DEBUG: Değerleri göstermeden sadece var mı yok mu görelim
+  console.log("Gemini env flags", {
+    gemini: !!geminiEnv,
+    vite: !!viteEnv,
+    node: !!nodeEnv,
+  });
+
+  const apikey = geminiEnv || viteEnv || nodeEnv;
+  
   if (!apikey) {
     console.warn(
       "Gemini API Key bulunamadı. Yapay zeka özellikleri devre dışı kalabilir."
