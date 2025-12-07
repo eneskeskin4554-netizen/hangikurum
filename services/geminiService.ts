@@ -5,8 +5,10 @@ import { INTERNATIONAL_BROKERS, CRYPTO_EXCHANGES, LAST_UPDATED } from "../consta
 let chatSession: Chat | null = null;
 
 const getClient = () => {
-  // Use process.env.API_KEY exclusively as per guidelines.
-  const apiKey = process.env.API_KEY;
++  const apikey =
++    import.meta.env.VITE_GEMINI_API_KEY ||
++    import.meta.env.VITE_API_KEY ||
++    process.env.API_KEY;
 
   if (!apiKey) {
     console.warn("Gemini API Key bulunamadı. Yapay zeka özellikleri devre dışı kalabilir.");
