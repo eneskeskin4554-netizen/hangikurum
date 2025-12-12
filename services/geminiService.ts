@@ -5,14 +5,15 @@ import { INTERNATIONAL_BROKERS, CRYPTO_EXCHANGES, LAST_UPDATED } from "../consta
 let chatSession: Chat | null = null;
 
 const getClient = () => {
- // Vite client env: use import.meta.env.VITE_*
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
   if (!apiKey) {
-    console.warn("Gemini API Key bulunamadı. Yapay zeka özellikleri devre dışı kalabilir.");
-    return null; // Return null instead of throwing to prevent app crash
+    console.warn("Gemini API Key bulunamadı.");
+    return null;
   }
-  return new GoogleGenAI(apiKey);
+
+  return new GoogleGenAI({ apiKey }); 
+  // Alternatif: return new GoogleGenAI(apiKey);  (SDK sürümüne göre)
 };
 
 const formatContext = (brokers: Broker[], intBrokers: InternationalBroker[], cryptoExchanges: CryptoExchange[]): string => {
