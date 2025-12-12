@@ -4,15 +4,14 @@ import { INTERNATIONAL_BROKERS, CRYPTO_EXCHANGES, LAST_UPDATED } from "../consta
 
 let chatSession: Chat | null = null;
 
-const getClient = () => {
-  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
-  if (!apiKey) {
-    console.warn("Gemini API Key bulunamadı.");
-    return null;
-  }
+if (!apiKey) {
+  console.warn("Gemini API key yok (VITE_GEMINI_API_KEY).");
+  return null;
+}
 
-return new GoogleGenAI({ apiKey: apikey }); 
+return new GoogleGenAI({ apiKey });
   // Alternatif: return new GoogleGenAI(apiKey);  (SDK sürümüne göre)
 };
 
