@@ -5,7 +5,7 @@ import { INTERNATIONAL_BROKERS, CRYPTO_EXCHANGES, LAST_UPDATED } from "../consta
 let chatSession: Chat | null = null;
 
 const getClient = () => {
-  // Use process.env.API_KEY exclusively as per guidelines.
+ // Vite client env: use import.meta.env.VITE_*
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
   if (!apiKey) {
