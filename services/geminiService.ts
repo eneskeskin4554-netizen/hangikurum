@@ -6,7 +6,7 @@ let chatSession: Chat | null = null;
 
 const getClient = () => {
   // Use process.env.API_KEY exclusively as per guidelines.
-  const apiKey = process.env.API_KEY;
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
   if (!apiKey) {
     console.warn("Gemini API Key bulunamadı. Yapay zeka özellikleri devre dışı kalabilir.");
