@@ -12,7 +12,7 @@ const getClient = () => {
     return null;
   }
 
-  return new GoogleGenAI({ apiKey }); 
+return new GoogleGenAI({ apiKey: apikey }); 
   // Alternatif: return new GoogleGenAI(apiKey);  (SDK sürümüne göre)
 };
 
