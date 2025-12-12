@@ -12,7 +12,7 @@ const getClient = () => {
     console.warn("Gemini API Key bulunamadı. Yapay zeka özellikleri devre dışı kalabilir.");
     return null; // Return null instead of throwing to prevent app crash
   }
-  return new GoogleGenAI({ apiKey });
+  return new GoogleGenAI(apiKey);
 };
 
 const formatContext = (brokers: Broker[], intBrokers: InternationalBroker[], cryptoExchanges: CryptoExchange[]): string => {
