@@ -1,83 +1,56 @@
 
-import React from 'react';
-
-export enum FeeType {
-  FIXED = 'Sabit',
-  TIERED = 'Kademeli',
-  FREE = 'Ücretsiz'
-}
+export type MarketOption = 'BIST' | 'VIOP' | 'FOREIGN' | 'CRYPTO';
 
 export interface Broker {
   id: string;
   name: string;
-  logoColor: string;
-  icon?: React.ElementType; // Icon component type
-  logoUrl?: string;
-  commissionRate: {
-    share: number; // In ten thousandths (onbinde)
-    viop: number;  // In ten thousandths (onbinde)
-  };
-  minCommission: number; // TL
-  accountFee: string;
-  liveData: FeeType;
-  mobileAppScore: number;
-  features: string[];
-  description: string;
-  volumeRequirement?: string;
-  accountOpenUrl?: string;
-  tags?: string[];
+  description: string; // Brief description of strengths/USP
+  logoUrl: string;
+  type: 'Bank' | 'Brokerage' | 'CryptoExchange';
+  supportedMarkets: MarketOption[]; // New field to control visibility in tabs
+  
+  // BIST Data
+  bistCommission?: number; // percentage (e.g. 0.002 for 0.2%)
+  minBistCommission?: number; // TL (Deprecated for display, kept for calc logic if needed)
+  viopCommission?: number; // percentage (e.g. 0.0002 for 0.02% - onbinde 2)
+  
+  // Foreign Data
+  foreignCommission?: number; // fixed USD usually, or percentage
+  foreignMin?: number; // Minimum USD
+  
+  // Crypto Data
+  cryptoMaker?: number; // percentage
+  cryptoTaker?: number; // percentage
+  
+  // Common
+  accountFee?: string;
+  pros: string[];
+  url: string;
+  appScore: number; // New field: 1.0 to 5.0
 }
 
-export interface InternationalBroker {
-  id: string;
+export interface Author {
   name: string;
-  logoColor: string;
-  icon?: React.ElementType;
-  logoUrl?: string;
-  commissionRate: string; // Text string like "1.5 USD" or "Onbinde 20"
-  minCommission: string; // Text like "1 USD" or "Yok"
-  custodyFee: string; // Saklama ücreti
-  mobileAppScore: number;
-  features: string[];
-  description: string;
-  accountOpenUrl?: string;
-  tags?: string[];
+  avatar: string;
+  role: string;
 }
 
-export interface CryptoExchange {
-  id: string;
-  name: string;
-  logoColor: string;
-  icon?: React.ElementType;
-  logoUrl?: string;
-  commissionRate: {
-    maker: string; // e.g. "%0.10"
-    taker: string; // e.g. "%0.10"
-  };
-  coinCount: number;
-  mobileAppScore: number;
-  features: string[];
-  description: string;
-  accountOpenUrl?: string;
-  tags?: string[];
+export interface BlogPost {
+  id: number;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  imageUrl: string;
+  readTime: string;
+  author: Author;
 }
 
-export interface ChatMessage {
-  id: string;
-  role: 'user' | 'model';
-  text: string;
-  timestamp: Date;
+export interface BlogPostExtended extends BlogPost {
+  content: string;
 }
 
-export interface ComparisonMetric {
-  name: string;
-  commission: number;
-  score: number;
-}
-
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-  watchlist: string[];
+export interface CalculationResult {
+  broker: Broker;
+  estimatedCost: number;
 }
