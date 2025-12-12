@@ -5,7 +5,7 @@ import { INTERNATIONAL_BROKERS, CRYPTO_EXCHANGES, LAST_UPDATED } from "../consta
 let chatSession: Chat | null = null;
 
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-
+console.log("VITE_GEMINI_API_KEY var mı:", Boolean(apiKey));
 if (!apiKey) {
   console.warn("Gemini API key yok (VITE_GEMINI_API_KEY).");
   return null;
