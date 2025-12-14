@@ -221,7 +221,7 @@ export const BROKERS: Broker[] = [
     type: 'Brokerage',
     supportedMarkets: ['BIST', 'VIOP', 'FOREIGN'],
     bistCommission: 0.000375, // Onbinde 3.75
-    viopCommission: 0.00015,
+    viopCommission: 0.0002,
     minBistCommission: 0,
     foreignCommission: 0.002,
     foreignMin: 2, // $2
