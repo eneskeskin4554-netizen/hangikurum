@@ -89,20 +89,6 @@ try {
     { role: "model", text: data.text || "Cevap alınamadı." }
   ]);
 
-    } catch (error) {
-      console.error("AI Error:", error);
-      setMessages(prev => {
-         const newHistory = [...prev];
-         if (newHistory[newHistory.length - 1].text === '') {
-             newHistory.pop();
-         }
-         return [...newHistory, { role: 'model', text: 'Bağlantıda küçük bir sorun oluştu. Lütfen tekrar dene. 🔌' }];
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
