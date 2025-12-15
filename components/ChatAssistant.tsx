@@ -88,14 +88,6 @@ try {
     ...prev,
     { role: "model", text: data.text || "Cevap alınamadı." }
   ]);
-} catch (e) {
-  setMessages(prev => [
-    ...prev,
-    { role: "model", text: "❌ Sunucuya bağlanılamadı." }
-  ]);
-} finally {
-  setIsLoading(false);
-}
 
     } catch (error) {
       console.error("AI Error:", error);
