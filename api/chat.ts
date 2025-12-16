@@ -54,13 +54,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // ✅ HER ZAMAN JSON
     return res.status(200).json({ text });
-  } catch (err: any) {
-    console.error("CHAT API ERROR:", err);
+} catch (err: any) {
+  console.error("CHAT API ERROR:", err);
 
-    // ✅ HATA DAHİ JSON
-    return res.status(500).json({
-      error: "Chat API failed",
-      detail: err?.message || String(err),
-    });
-  }
+  const detail = err?.message || String(err);
+
+  // ✅ Hata mesajını direkt error'a yaz (UI'da görünsün)
+  return res.status(500).json({
+    error: detail,
+    detail,
+  });
+}
+
 }
