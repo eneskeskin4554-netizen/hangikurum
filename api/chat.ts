@@ -25,7 +25,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const model = "gemini-2.5-flash";
     const url = `https://generativelanguage.googleapis.com/v1/models/${model}:generateContent?key=${apiKey}`;
 
-    const prompt = context ? `${context}\n\nKullanıcı: ${message}` : message;
+   const systemPrompt = `
+Sen Türkçe konuşan bir finans asistanısın.
+Cevaplarını HER ZAMAN Türkçe ver.
+Kısa, net ve kullanıcı dostu ol.
+Yatırım tavsiyesi verme.
+`;
+
+const prompt = context
+  ? `${systemPrompt}\n\n${context}\n\nKullanıcı: ${message}`
+  : `${systemPrompt}\n\nKullanıcı: ${message}`;
+
 
     const resp = await fetch(url, {
       method: "POST",
