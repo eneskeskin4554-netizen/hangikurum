@@ -22,7 +22,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     // ✅ v1 endpoint (v1beta yerine)
-    const model = "gemini-1.5-flash"; // istersen sonra değiştiririz
+    const model = "gemini-2.5-flash";
     const url = `https://generativelanguage.googleapis.com/v1/models/${model}:generateContent?key=${apiKey}`;
 
     const prompt = context ? `${context}\n\nKullanıcı: ${message}` : message;
