@@ -121,10 +121,9 @@ const ChatAssistant: React.FC = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          message: userMessage,
-          // İstersen context'i gerçek verilerle doldur:
-          // context: JSON.stringify(BROKERS)
-          context: ""
+  message: userMessage,
+  context: JSON.stringify(BROKERS)
+
         })
       });
 
