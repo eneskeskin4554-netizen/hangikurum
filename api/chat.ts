@@ -25,16 +25,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const model = "gemini-2.5-flash";
     const url = `https://generativelanguage.googleapis.com/v1/models/${model}:generateContent?key=${apiKey}`;
 
-   const systemPrompt = `
-Sen Türkçe konuşan bir finans asistanısın.
-Cevaplarını HER ZAMAN Türkçe ver.
-Kısa, net ve kullanıcı dostu ol.
-Yatırım tavsiyesi verme.
+const systemPrompt = `
+Sen Hangikurum.com içindeki verilerle çalışan bir karşılaştırma asistanısın.
+
+ZORUNLU KURALLAR:
+1) Cevaplarını HER ZAMAN Türkçe ver.
+2) SADECE sana "VERI_JSON" olarak verilen platform verisini kaynak al.
+3) VERI_JSON içinde net bilgi yoksa: "Platform verilerimde bu bilgi yok." de ve kullanıcıdan işlem türünü/piyasayı sor.
+4) Tahmin yapma, genel konuşma yapma, dış kaynak önermeyi bırak.
+5) Yatırım tavsiyesi verme.
+
+ÇIKTI FORMATI (mümkünse):
+- Kısa sonuç (1-2 cümle)
+- En uygun 3 seçenek (madde madde, kurum adı + ilgili ücret/komisyon + not)
+- Veri notu (varsa tarih / şart / istisna)
 `;
 
 const prompt = context
-  ? `${systemPrompt}\n\n${context}\n\nKullanıcı: ${message}`
-  : `${systemPrompt}\n\nKullanıcı: ${message}`;
+  ? `VERI_JSON:\n${context}\n\nKULLANICI_SORUSU:\n${message}`
+  : `KULLANICI_SORUSU:\n${message}\n\nNot: VERI_JSON gelmedi, bu durumda "Platform verilerimde bu bilgi yok." de.`;
 
 
     const resp = await fetch(url, {
