@@ -83,9 +83,19 @@ const ChatAssistant: React.FC = () => {
     });
   };
 
+  // ✅ Güvenli JSON okuma helper’ı
+  const safeReadJson = async (res: Response) => {
+    const raw = await res.text(); // önce text al
+    try {
+      return { ok: res.ok, status: res.status, json: JSON.parse(raw), raw };
+    } catch {
+      // JSON değilse ham body’yi döndür
+      return { ok: res.ok, status: res.status, json: null as any, raw };
+    }
+  };
+
   const handleSend = async (overrideText?: string) => {
     const rawText = overrideText || input;
-
     if (!rawText.trim() || isLoading) return;
 
     const userMessage = sanitizeInput(rawText);
@@ -112,21 +122,43 @@ const ChatAssistant: React.FC = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           message: userMessage,
-          context: "" // istersen: JSON.stringify(BROKERS)
+          // İstersen context'i gerçek verilerle doldur:
+          // context: JSON.stringify(BROKERS)
+          context: ""
         })
       });
 
-      const data = await r.json();
+      const { ok, status, json, raw } = await safeReadJson(r);
+
+      if (!ok) {
+        // Backend JSON döndürdüyse error’u al, değilse raw’ın ilk kısmını göster
+        const errMsg =
+          (json && (json.error || json.message)) ||
+          `API hata (status=${status}). ${raw ? raw.slice(0, 180) : ""}`;
+        throw new Error(errMsg);
+      }
+
+      // Başarılı response
+      const botText =
+        (json && (json.text || json.answer || json.output)) ||
+        "Cevap alınamadı.";
 
       setMessages(prev => [
         ...prev,
-        { role: "model", text: data?.text || "Cevap alınamadı." }
+        { role: "model", text: String(botText) }
       ]);
-    } catch (e) {
+    } catch (e: any) {
       console.error("Chat API error:", e);
+
+      // Kullanıcıya daha anlamlı hata göster
+      const msg =
+        typeof e?.message === "string" && e.message.length > 0
+          ? `❌ ${e.message}`
+          : "❌ Sunucuya bağlanılamadı.";
+
       setMessages(prev => [
         ...prev,
-        { role: "model", text: "❌ Sunucuya bağlanılamadı." }
+        { role: "model", text: msg }
       ]);
     } finally {
       setIsLoading(false);
