@@ -2,14 +2,15 @@
 import React, { Component, ErrorInfo, ReactNode } from "react";
 
 interface Props {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 interface State {
   hasError: boolean;
 }
 
-class ErrorBoundary extends Component<Props, State> {
+// Fixed 'props' property error by ensuring the class correctly extends React.Component with defined generics
+class ErrorBoundary extends React.Component<Props, State> {
   public state: State = {
     hasError: false,
   };
