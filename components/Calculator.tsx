@@ -308,13 +308,12 @@ const Calculator: React.FC = () => {
                 </button>
             </div>
 
-            {/* Winner Card - Mobile Optimized (Center aligned vertical stack for mobile) */}
+            {/* Winner Card */}
             {winner && (
                 <div className="bg-gradient-to-b from-[#1a1a1a] to-[#121212] md:bg-gradient-to-r md:from-primary/20 md:to-green-900/20 p-6 md:p-8 rounded-[2rem] border border-primary/30 relative overflow-hidden shadow-2xl">
-                    {/* Glow Effects */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-[60px] rounded-full pointer-events-none"></div>
                     
-                    <div className="relative z-10 flex flex-col md:flex-row items-center gap-4 md:gap-6">
+                    <div className="relative z-10 flex flex-col items-center">
                          {/* Winner Badge Mobile */}
                          <div className="md:hidden w-full flex justify-center mb-2">
                              <span className="bg-primary text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest shadow-lg shadow-primary/20 animate-pulse">
@@ -322,56 +321,83 @@ const Calculator: React.FC = () => {
                              </span>
                          </div>
 
-                         {/* Logo */}
-                         <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl p-3 flex items-center justify-center shadow-xl ring-4 ring-white/5">
-                            <img src={winner.broker.logoUrl} className="w-full h-full object-contain" alt={winner.broker.name} />
+                         <div className="w-full flex flex-col md:flex-row items-center gap-4 md:gap-6 mb-6">
+                            {/* Logo */}
+                            <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl p-3 flex items-center justify-center shadow-xl ring-4 ring-white/5">
+                                <img src={winner.broker.logoUrl} className="w-full h-full object-contain" alt={winner.broker.name} />
+                            </div>
+
+                            {/* Info */}
+                            <div className="flex-1 text-center md:text-left space-y-2 md:space-y-0">
+                                <div className="flex flex-col md:flex-row items-center md:justify-start gap-2 mb-1">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-white">{winner.broker.name}</h3>
+                                    <span className="hidden md:inline-block bg-primary text-black text-[10px] font-black px-2 py-0.5 rounded uppercase">Kazanan</span>
+                                </div>
+                                <p className="text-gray-400 text-xs md:text-sm max-w-[250px] md:max-w-none mx-auto">{winner.broker.description}</p>
+                            </div>
+
+                            {/* Price */}
+                            <div className="text-center md:text-right w-full md:w-auto pt-4 md:pt-0 border-t border-white/10 md:border-0">
+                                <p className="text-[10px] md:text-xs text-primary font-bold uppercase tracking-widest mb-1">Tahmini Komisyon</p>
+                                <p className="text-5xl md:text-4xl font-display font-bold text-white tracking-tighter">
+                                    {new Intl.NumberFormat('tr-TR', { minimumFractionDigits: 2 }).format(winner.cost)}<span className="text-2xl md:text-xl text-gray-500 ml-1">₺</span>
+                                </p>
+                                <div className="inline-flex items-center gap-1 bg-white/5 px-2 py-1 rounded mt-2">
+                                    <span className="text-[10px] text-gray-400">{winner.rateDisplay}</span>
+                                </div>
+                            </div>
                          </div>
 
-                         {/* Info */}
-                         <div className="flex-1 text-center md:text-left space-y-2 md:space-y-0">
-                             <div className="flex flex-col md:flex-row items-center md:justify-start gap-2 mb-1">
-                                <h3 className="text-2xl md:text-3xl font-bold text-white">{winner.broker.name}</h3>
-                                <span className="hidden md:inline-block bg-primary text-black text-[10px] font-black px-2 py-0.5 rounded uppercase">Kazanan</span>
-                             </div>
-                             <p className="text-gray-400 text-xs md:text-sm max-w-[250px] md:max-w-none mx-auto">{winner.broker.description}</p>
-                         </div>
-
-                         {/* Price */}
-                         <div className="text-center md:text-right w-full md:w-auto mt-4 md:mt-0 pt-4 md:pt-0 border-t border-white/10 md:border-0">
-                             <p className="text-[10px] md:text-xs text-primary font-bold uppercase tracking-widest mb-1">Tahmini Komisyon</p>
-                             <p className="text-5xl md:text-4xl font-display font-bold text-white tracking-tighter">
-                                {new Intl.NumberFormat('tr-TR', { minimumFractionDigits: 2 }).format(winner.cost)}<span className="text-2xl md:text-xl text-gray-500 ml-1">₺</span>
-                             </p>
-                             <div className="inline-flex items-center gap-1 bg-white/5 px-2 py-1 rounded mt-2">
-                                <span className="text-[10px] text-gray-400">{winner.rateDisplay}</span>
-                             </div>
-                         </div>
+                         {/* ACTION BUTTON (WINNER) */}
+                         <a 
+                            href={winner.broker.url}
+                            target="_blank"
+                            rel="nofollow noopener noreferrer"
+                            className="w-full py-4 bg-primary text-black font-bold text-lg rounded-2xl hover:bg-white transition-all flex items-center justify-center gap-2 shadow-xl shadow-primary/20 active:scale-95 duration-200 group"
+                         >
+                            <span className="relative">Hemen Hesap Aç</span>
+                            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                         </a>
                     </div>
                 </div>
             )}
 
-            {/* Results List - Compact Mobile View */}
-            <div className="bg-[#121212] border border-white/5 rounded-3xl overflow-hidden">
+            {/* Results List */}
+            <div className="bg-[#121212] border border-white/5 rounded-3xl overflow-hidden shadow-xl">
                 <div className="px-6 py-4 border-b border-white/5 bg-white/[0.02]">
                     <h4 className="text-gray-400 text-[10px] md:text-sm font-bold uppercase tracking-widest">Diğer Alternatifler ({totalBrokers - 1})</h4>
                 </div>
                 {results.slice(1).map((item, index) => (
-                    <div key={item.broker.id} className="flex items-center justify-between p-4 md:p-6 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors group">
+                    <div key={item.broker.id} className="flex flex-col md:flex-row md:items-center justify-between p-4 md:p-6 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors group gap-4">
                         <div className="flex items-center gap-3 md:gap-4">
                             <span className="text-gray-600 font-bold w-4 text-xs md:text-sm text-center">{index + 2}</span>
-                            <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-lg p-1.5 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity">
-                                <img src={item.broker.logoUrl} className="w-full h-full object-contain" />
+                            <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-xl p-1.5 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity flex-shrink-0">
+                                <img src={item.broker.logoUrl} className="w-full h-full object-contain" alt={item.broker.name} />
                             </div>
-                            <div>
-                                <p className="text-white font-bold text-sm md:text-base">{item.broker.name}</p>
-                                <p className="md:hidden text-[10px] text-gray-500">{item.rateDisplay}</p>
+                            <div className="min-w-0">
+                                <p className="text-white font-bold text-sm md:text-lg truncate">{item.broker.name}</p>
+                                <p className="text-[10px] md:text-xs text-gray-500 truncate">{item.rateDisplay}</p>
                             </div>
                         </div>
-                        <div className="text-right">
-                            <p className="text-white font-bold text-base md:text-lg tabular-nums">
-                                {new Intl.NumberFormat('tr-TR', { minimumFractionDigits: 2 }).format(item.cost)} ₺
-                            </p>
-                            <p className="text-[10px] md:text-xs text-red-400">+{new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 }).format(item.cost - winner.cost)} ₺</p>
+
+                        <div className="flex items-center justify-between md:justify-end gap-4 md:gap-8 w-full md:w-auto border-t border-white/5 md:border-0 pt-3 md:pt-0">
+                            <div className="text-left md:text-right">
+                                <p className="text-white font-bold text-lg md:text-xl tabular-nums">
+                                    {new Intl.NumberFormat('tr-TR', { minimumFractionDigits: 2 }).format(item.cost)}<span className="text-sm font-normal text-gray-500 ml-0.5">₺</span>
+                                </p>
+                                <p className="text-[10px] text-red-400">+{new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 }).format(item.cost - winner.cost)} ₺ fark</p>
+                            </div>
+
+                            {/* LIST ITEM ACTION BUTTON */}
+                            <a 
+                                href={item.broker.url}
+                                target="_blank"
+                                rel="nofollow noopener noreferrer"
+                                className="px-4 py-2.5 md:px-6 md:py-3 bg-white/5 hover:bg-white hover:text-black border border-white/10 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 flex items-center gap-2"
+                            >
+                                <span className="hidden md:inline">Hesap Aç</span>
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                            </a>
                         </div>
                     </div>
                 ))}
@@ -412,4 +438,3 @@ const Calculator: React.FC = () => {
 };
 
 export default Calculator;
-
