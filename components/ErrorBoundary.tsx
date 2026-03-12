@@ -1,12 +1,12 @@
 import React, { Component, ErrorInfo, ReactNode } from "react";
 
-type Props = {
+interface Props {
   children?: ReactNode;
-};
+}
 
-type State = {
+interface State {
   hasError: boolean;
-};
+}
 
 class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
@@ -45,7 +45,9 @@ class ErrorBoundary extends Component<Props, State> {
             </svg>
           </div>
 
-          <h1 className="text-3xl font-bold mb-4">Küçük Bir Sorun Oluştu</h1>
+          <h1 className="text-3xl font-bold mb-4">
+            Küçük Bir Sorun Oluştu
+          </h1>
 
           <p className="text-gray-400 mb-8 max-w-md">
             Sistemde geçici bir hata meydana geldi. Lütfen sayfayı yenileyin.
