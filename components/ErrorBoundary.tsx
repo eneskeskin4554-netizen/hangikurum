@@ -30,7 +30,9 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-[#0a0a0a] text-white p-6 text-center">
-          <h1 className="text-3xl font-bold mb-4">Küçük Bir Sorun Oluştu</h1>
+          <h1 className="text-3xl font-bold mb-4">
+            Küçük Bir Sorun Oluştu
+          </h1>
 
           <p className="text-gray-400 mb-8 max-w-md">
             Sistemde geçici bir hata meydana geldi. Lütfen sayfayı yenileyin.
